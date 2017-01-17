@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.focu{
+				width: 600px;
+				height: 400px;
+				position: relative;
+			}
+			.imgs span{
+				position: absolute;
+				height: 50px;
+				width: 30px;
+				background-color: #F5F5DC;
+				opacity: .4;
+				padding-top: 40px;
+				cursor: pointer;
+				*filter:alpha(opacity=40);
+				display: none;
+			}
+			.left{
+				left: 0px;
+				top: 150px;
+				padding-left: 30px;
+			}
+			.right{
+				right: 0px;
+				top: 150px;
+				padding-left: 30px;
+			}
+			.focus{
+				position: absolute;
+				top: 360px;
+                left: 240px;
+                height: 16px;
+           
+			}
+			.focus span{
+				height: 16px;
+				width: 16px;
+				display: inline-block;
+				background: url(images/dot.png) no-repeat;
+				_overflow:hidden;
+			}
+		</style>
+		<script src="../无缝滚动/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var i=0;var t=0
+				setInterval(function(){
+				if(i>4){i=0}
+				if(i<0){i=0}
+				$(".imgs img").attr("src","images/"+i+".jpg");
+				$(".imgs a").attr("href",i+".html");
+				$(".focus span:eq("+i+")").css({"background":"url(images/dotActive.png)"}).siblings("span").css({"background":"url(images/dot.png)"});
+				t=i;
+				i++;
+				
+				},3000);
+				$(".focus span").click(function(){
+					$(this).css({"background":"url(images/dotActive.png)"}).siblings("span").css({"background":"url(images/dot.png)"});
+					i=$(this).index();
+					$(".imgs img").attr("src","images/"+i+".jpg");
+				    $(".imgs a").attr("href",i+".html");
+				});
+				$(".focu").mouseover(function(){
+					$(".imgs span").show();
+				});
+				$(".focu").mouseout(function(){
+					$(".imgs span").hide();
+				});
+				$(".left").click(function(){
+					t--;
+					if(t<0){t=4;}
+				 	$(".imgs img").attr("src","images/"+t+".jpg");
+				    $(".imgs a").attr("href",t+".html");
+				    $(".focus span:eq("+t+")").css({"background":"url(images/dotActive.png)"}).siblings("span").css({"background":"url(images/dot.png)"});
+					i=t;
+				});
+				$(".right").click(function(){
+					t++;
+					if(t>4){t=0;}
+				 	$(".imgs img").attr("src","images/"+t+".jpg");
+				    $(".imgs a").attr("href",t+".html");
+				    $(".focus span:eq("+t+")").css({"background":"url(images/dotActive.png)"}).siblings("span").css({"background":"url(images/dot.png)"});
+					i=t;
+				});
+			});
+		</script>
+		<!--[if IE 6]>
+       <script type="text/javascript" src="iepng.js"></script> 
+       <script type="text/javascript">
+	    	EvPNG.fix('.class1,.class2,.class3,.class4,.class5');
+	    </script>
+<![endif]-->
+	</head>
+	<body>
+		<div class="focu">
+			<div class="imgs">
+				<a href="0.html"><img src="images/0.jpg"/></a>
+				<span class="left">&lt</span><span class="right">&gt;</span>
+			</div>
+			<div class="focus">
+				<span class="class1" style="background: url(images/dotActive.png);"></span>
+				<span class="class2"></span>
+				<span class="class3"></span>
+				<span class="class4"></span>
+				<span class="class5"></span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+           #div1{
+           	width: 942px;
+           	border: 1px solid coral;
+           	height: 130px;
+      position: relative;
+      overflow: hidden;
+           }
+			ul{
+				list-style: none;
+				margin: 0px;
+				padding: 0px;
+			}
+			ul li{
+				float: left;
+				padding-top: 10px;
+				position: absolute;
+			}
+		</style>
+		<script src="jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		$("#div1 li").each(function(index){
+	    			$(this).css({"left":index*157+"px"});
+	    		});
+	    		var sid;
+	    		function move(){
+	    			sid=setInterval(function(){
+	    			$("#div1 ul li").css({"left":"-=1px"});
+	    			if($("#div1 li:eq(5)").position().left<=-157){
+	    				$("#div1 li:lt(6)").each(function(index){
+	    					$(this).css({"left":index*157+942+"px"});
+	    				});
+	    			}
+	    			if($("#div1 li:eq(11)").position().left<=-157){
+	    				$("#div1 li:gt(6)").each(function(index){
+	    					$(this).css({"left":index*157+942+"px"});
+	    				});
+	    			}
+	    			},30);
+	    		}
+	    		move();
+	    		
+	    	$("#div1").mouseover(function(){
+	    		clearInterval(sid);
+	    	});
+	    	$("#div1").mouseout(function(){
+	    		move();
+	    	});
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="div1">
+			<ul>
+				 <li><a href="1.html"><img src="images/jjx1.jpg"><br>房子1</a></li>
+    <li><a href="2.html"><img src="images/jjx2.jpg"><br>房子2</a></li>
+    <li><a href="3.html"><img src="images/jjx3.jpg"><br>房子3</a></li>
+    <li><a href="4.html"><img src="images/jjx4.jpg"><br>房子4</a></li>
+    <li><a href="5.html"><img src="images/jjx5.jpg"><br>房子5</a></li>
+    <li><a href="6.html"><img src="images/jjx6.jpg"><br>房子6</a></li>
+    <li><a href="1.html"><img src="images/jjx1.jpg"><br>房子1</a></li>
+    <li><a href="2.html"><img src="images/jjx2.jpg"><br>房子2</a></li>
+    <li><a href="3.html"><img src="images/jjx3.jpg"><br>房子3</a></li>
+    <li><a href="4.html"><img src="images/jjx4.jpg"><br>房子4</a></li>
+    <li><a href="5.html"><img src="images/jjx5.jpg"><br>房子5</a></li>
+    <li><a href="6.html"><img src="images/jjx6.jpg"><br>房子6</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

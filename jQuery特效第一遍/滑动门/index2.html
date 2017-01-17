@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.tab{
+				width: 330px;
+				height: 300px;
+				border: 1px solid beige;
+				position: relative;
+			}
+			.btn{
+				width: 108px;
+				border-left: 1px solid darkolivegreen;
+				border-right: 1px solid darkolivegreen;
+				background: url(images/btn.gif)repeat-x;
+				text-align: center;
+			}
+			.one{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.two{
+				position: absolute;
+				top: 0px;
+				left: 110px;
+			}
+			.three{
+				position: absolute;
+				top: 0px;
+				left: 220px;
+			}
+			.content{
+				position: absolute;
+				top: 30px;
+				left: 0px;
+				display: none;
+			}
+			.ac{
+				background-image: none;
+			}
+		</style>
+		<script src="../无缝滚动/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".btn").mouseover(function(){$(this).addClass("ac").next().show().end().siblings().removeClass("ac").next(".content").hide();});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="tab">
+			<div class="btn one">1</div>
+			<div class="content" style="display: block;">cdsklvnd</div>
+			<div class="btn two">2</div>
+			<div class="content">dnsklvnfz</div>
+			<div class="btn three">3</div>
+			<div class="content">cjkz bzdjbf</div>
+		</div>
+	</body>
+</html>
