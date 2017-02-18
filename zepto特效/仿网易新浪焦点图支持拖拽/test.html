@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手机移动端无缝滚动焦点图</title>
+    <!--设置rem单位-->
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <!--slider组件用到的css-->
+    <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <!--slider插件用到的依赖 begin-->
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/zepto.extend.js"></script>
+    <script type="text/javascript" src="js/zepto.ui.js"></script>
+    <script type="text/javascript" src="js/widget/slider.js"></script>
+    <!--slider用到的依赖  end-->
+</head>
+<body>
+
+<!-- 代码 开始 -->
+
+<div id="slider">
+    <div>
+        <a href="javascript:;" target="_blank"><img lazyload="images/1.png"></a>
+        <p>1/5</p>
+    </div>
+    <div>
+        <a href="javascript:;" target="_blank"><img lazyload="images/2.png"></a>
+        <p>2/5</p>
+    </div>
+    <div>
+        <a href="javascript:;" target="_blank"><img lazyload="images/3.png"></a>
+        <p>3/5</p>
+    </div>
+    <div>
+        <a href="javascript:;" target="_blank"><img lazyload="images/4.png"></a>
+        <p>4/5</p>
+    </div>
+    <div>
+        <a href="javascript:;" target="_blank"><img lazyload="images/5.png"></a>
+        <p>6/5</p>
+    </div>
+</div>
+<script>
+    //创建slider组件
+    $('#slider').slider({loop:true});
+</script>
+
+<!-- 代码 结束 -->
+
+</body>
+
+</html>
